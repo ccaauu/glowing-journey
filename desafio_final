@@ -1,0 +1,43 @@
+//Crie um programa que receba o número de medalhas de ouro, prata e bronze de um país nas Olimpíadas e calcule o total de medalhas. Quando escrever 'sair', o programa deverá encerrar e mostrar na tela o ranking de medalhas no formato:
+function rankingmedalhas () {
+    const paises = [];
+    let continuar = true;
+    
+    while (continuar) {
+        const pais = prompt ("digite o nome do país(ou sair para finalizar):");
+        if (pais.toLowerCase() === "sair") {
+            continuar = false;
+            continue;
+        }
+    }
+    let ouro = parseInt(prompt("digite o numero de medalhas de ouro de ${pais}:"))
+    let prata = parseInt(promp("digite o numero de medalhas de prata de ${pais}:"))
+    let bronze = parseint(prompt("digite o numero de medalhas de bronze de ${pais}:"))
+
+    const totalmedalhas = ouro + prata + bronze;
+    
+    paises.push ({
+        nome: pais,
+        medalha: ouro,
+        medalha: prata,
+        medalha: bronze,
+        totalmedalhas: total
+    });
+
+    return paises;
+
+}
+
+function classificarpaises (paises){
+    return paises.sort ((a, b) => b.total - a.total);
+}
+
+function mostraranking(paises) {
+    console.log ("Ranking dos paises por total de medalhas:");
+    rankingmedalhas.array.forEach(pais=> {
+        console.log("${pais.nome}: ${pais.total} medalhas (Ouro:$pais.ouro}, Prata: ${pais.prata}, Bronze: ${pais.bronze}");
+        
+    });
+}
+
+
